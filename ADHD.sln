@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35208.52
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADHD.WebApp", "ADHD.WebApp\ADHD.WebApp.csproj", "{7B9E1B59-3FC1-473A-8CC5-915A52CF4C45}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADHD.UseCases", "ADHD.UseCases\ADHD.UseCases.csproj", "{679E66C2-9025-4410-AEB5-3771103EED9F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{823CBAD4-D835-476C-B01E-0339837EFCA6} = {823CBAD4-D835-476C-B01E-0339837EFCA6}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADHD.CoreBusiness", "ADHD.CoreBusiness\ADHD.CoreBusiness.csproj", "{823CBAD4-D835-476C-B01E-0339837EFCA6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ADHD.Plugins", "ADHD.Plugins", "{AD0F752B-51DA-4626-A474-E80A6727F602}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADHD.Plugins.InMemory", "ADHD.Plugins\ADHD.Plugins.InMe\ADHD.Plugins.InMemory.csproj", "{BB381B74-883E-4193-9EC2-EEA6BC5FDF2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B9E1B59-3FC1-473A-8CC5-915A52CF4C45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B9E1B59-3FC1-473A-8CC5-915A52CF4C45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B9E1B59-3FC1-473A-8CC5-915A52CF4C45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B9E1B59-3FC1-473A-8CC5-915A52CF4C45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{679E66C2-9025-4410-AEB5-3771103EED9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{679E66C2-9025-4410-AEB5-3771103EED9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{679E66C2-9025-4410-AEB5-3771103EED9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{679E66C2-9025-4410-AEB5-3771103EED9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{823CBAD4-D835-476C-B01E-0339837EFCA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{823CBAD4-D835-476C-B01E-0339837EFCA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{823CBAD4-D835-476C-B01E-0339837EFCA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{823CBAD4-D835-476C-B01E-0339837EFCA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB381B74-883E-4193-9EC2-EEA6BC5FDF2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB381B74-883E-4193-9EC2-EEA6BC5FDF2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB381B74-883E-4193-9EC2-EEA6BC5FDF2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB381B74-883E-4193-9EC2-EEA6BC5FDF2C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BB381B74-883E-4193-9EC2-EEA6BC5FDF2C} = {AD0F752B-51DA-4626-A474-E80A6727F602}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62934DAD-A4F2-4018-B39E-11F61B8AB8B6}
+	EndGlobalSection
+EndGlobal

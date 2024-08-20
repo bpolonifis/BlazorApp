@@ -1,0 +1,81 @@
+﻿@page "/addusertask"
+@inject IAddUserTaskUseCase AddUserTaskUseCase; 
+@inject NavigationManager NavigationManager;
+
+
+
+<h3>AddInventory</h3>
+<br />
+
+<EditForm Model="userTask" FormName="formUserTask" OnValidSubmit="Save">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    Error Summmary Tag
+
+
+    
+    <div class="form-group">
+        <label for="name"> Task Description</label>
+        <InputText id="name"
+                   @bind-Value="userTask.TaskDescription"
+            class="form-control">
+        </InputText>
+    </div>
+
+    <div class="form-group">
+        <label for="name"> Task Location</label>
+        <InputText id="name"
+                   @bind-Value="userTask.TaskLocation"
+                   class="form-control">
+        </InputText>
+    </div>
+
+    <div class="form-group">
+        <label for="name"> Start Time</label>
+        <InputDate id="name"
+                   @bind-Value="userTask.TaskTimePrediction"
+                   class="form-control">
+        </InputDate>
+    </div>
+
+    <div class="form-group">
+        <label for="name"> Start Time</label>
+        <InputDate id="name"
+                   @bind-Value="userTask.TaskTimeInitiated"
+                   class="form-control">
+        </InputDate>
+    </div>
+    <div class="form-group">
+        <label for="name"> Start Time</label>
+        <InputDate id="name"
+                   @bind-Value="userTask.TaskTimeFinished"
+                   class="form-control">
+        </InputDate>
+    </div>
+    <div class="form-group">
+        <label for="name">User Task</label>
+        <InputText id="name"
+                   @bind-Value="userTask.TaskName"
+                   class="form-control">
+        </InputText>
+    </div>
+
+
+    <br />
+   <button type="submit" class="btn btn-primary">Save</button>
+    <a href="/usertasks"  class="btn btn-primary">Back</a>
+
+</EditForm>
+
+
+@code {
+   
+
+    [SupplyParameterFromForm]
+    private UserTask userTask { get; set; } = new UserTask();
+
+    private async Task Save()
+    {
+        await AddUserTaskUseCase.ExecuteAsync(userTask);
+        NavigationManager.NavigateTo("/usertasks");
+    }
+}

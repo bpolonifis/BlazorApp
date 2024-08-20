@@ -1,0 +1,30 @@
+﻿@page "/"
+
+
+@inject IViewUserTasksByDescriptionUseCase ViewUserTasksByNameUseCase
+
+<PageTitle>Test Page</PageTitle>
+
+<br />
+<br />
+
+<ul>
+    @if (userTasks is not null && userTasks.Count > 0)
+    {
+        foreach ( var utasks in userTasks)
+        {
+            <li>
+                @utasks.TaskDescription
+            </li>
+        }
+    }
+</ul>
+
+@code{
+    private List<UserTask>? userTasks;
+
+    protected override async Task OnInitializedAsync()
+    {
+       userTasks = (await ViewUserTasksByNameUseCase.ExecuteAsync()).ToList();
+    }
+}
