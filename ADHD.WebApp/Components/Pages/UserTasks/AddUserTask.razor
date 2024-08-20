@@ -4,12 +4,13 @@
 
 
 
-<h3>AddInventory</h3>
+<h3>add usertask</h3>
 <br />
 
 <EditForm Model="userTask" FormName="formUserTask" OnValidSubmit="Save">
     <DataAnnotationsValidator></DataAnnotationsValidator>
-    Error Summmary Tag
+    <ValidationSummary></ValidationSummary>
+   
 
 
     
@@ -31,33 +32,27 @@
 
     <div class="form-group">
         <label for="name"> Start Time</label>
-        <InputDate id="name"
+        <InputDate Type="InputDateType.Time" id="name"
                    @bind-Value="userTask.TaskTimePrediction"
                    class="form-control">
         </InputDate>
     </div>
 
     <div class="form-group">
-        <label for="name"> Start Time</label>
-        <InputDate id="name"
+        <label for="name"> Time Stated</label>
+        <InputDate Type="InputDateType.Time" id="name"
                    @bind-Value="userTask.TaskTimeInitiated"
                    class="form-control">
         </InputDate>
     </div>
     <div class="form-group">
-        <label for="name"> Start Time</label>
-        <InputDate id="name"
+        <label for="name"> Time Finished</label>
+        <InputDate Type="InputDateType.Time" id="name"
                    @bind-Value="userTask.TaskTimeFinished"
                    class="form-control">
         </InputDate>
     </div>
-    <div class="form-group">
-        <label for="name">User Task</label>
-        <InputText id="name"
-                   @bind-Value="userTask.TaskName"
-                   class="form-control">
-        </InputText>
-    </div>
+  
 
 
     <br />

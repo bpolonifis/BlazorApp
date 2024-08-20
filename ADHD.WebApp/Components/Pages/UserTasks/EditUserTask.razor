@@ -1,0 +1,89 @@
+﻿@page "/editusertask/{taskId:int}"
+
+@inject NavigationManager NavigationManager
+@inject IViewUserTaskbyIdUseCase ViewUserTaskbyIdUseCase
+@inject IEditUserTaskUseCase EditUserTaskUseCase
+
+<h3>EditUserTask</h3>
+<br />
+
+@if (this.userTask is not null)
+{
+
+    <EditForm Model="userTask" FormName="formUserTask" OnValidSubmit="Update">
+        <DataAnnotationsValidator></DataAnnotationsValidator>
+        <ValidationSummary></ValidationSummary>
+
+        <InputNumber @bind-Value="userTask.TaskId" hidden></InputNumber>
+
+
+        <div class="form-group">
+            <label for="name"> Task Description</label>
+            <InputText id="name"
+                       @bind-Value="userTask.TaskDescription"
+                       class="form-control">
+            </InputText>
+        </div>
+
+        <div class="form-group">
+            <label for="name"> Task Location</label>
+            <InputText id="name"
+                       @bind-Value="userTask.TaskLocation"
+                       class="form-control">
+            </InputText>
+        </div>
+
+        <div class="form-group">
+            <label for="name"> Start Time</label>
+            <InputDate Type="InputDateType.Time" id="name"
+                       @bind-Value="userTask.TaskTimePrediction"
+                       class="form-control">
+            </InputDate>
+        </div>
+
+        <div class="form-group">
+            <label for="name"> Time Stated</label>
+            <InputDate Type="InputDateType.Time" id="name"
+                       @bind-Value="userTask.TaskTimeInitiated"
+                       class="form-control">
+            </InputDate>
+        </div>
+        <div class="form-group">
+            <label for="name"> Time Finished</label>
+            <InputDate Type="InputDateType.Time" id="name"
+                       @bind-Value="userTask.TaskTimeFinished"
+                       class="form-control">
+            </InputDate>
+        </div>
+
+
+
+        <br />
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a href="/usertasks" class="btn btn-primary">Cancel</a>
+
+    </EditForm>
+
+
+}
+
+
+@code {
+    [Parameter]
+    public int TaskId { get; set; }
+
+    [SupplyParameterFromForm]
+    private UserTask? userTask { get; set; } 
+
+    protected override async Task OnParametersSetAsync()
+    {
+        this.userTask ??= await ViewUserTaskbyIdUseCase.ExecuteAsync(this.TaskId);
+    }
+
+    private async Task Update()
+    {
+        await EditUserTaskUseCase.ExecuteAsync(userTask);
+        NavigationManager.NavigateTo("/usertasks");
+    }
+
+}

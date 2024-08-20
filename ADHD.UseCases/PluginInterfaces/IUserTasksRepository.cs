@@ -11,5 +11,8 @@ namespace ADHD.UseCases.PluginInterfaces
     {
         Task AddUserTaskAsync(UserTask userTask);
         Task<IEnumerable<UserTask>> GetUserTasksByDescriptionAsync(string description);
+        Task<UserTask> GetUserTasksByTaskIdAsync(int taskId);
+        Task UpdateUserTaskAsync(UserTask userTask);
     }
 }
+ 

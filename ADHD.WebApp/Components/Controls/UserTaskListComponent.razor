@@ -30,8 +30,13 @@
 @code {
     private List<UserTask>? userTasks;
 
-    protected override async Task OnInitializedAsync()
+    [Parameter]
+    public string? SearchUserTaskFilter { get; set; }
+
+
+
+    protected override async Task OnParametersSetAsync()
     {
-        userTasks = (await ViewUserTasksByNameUseCase.ExecuteAsync()).ToList();
+        userTasks = (await ViewUserTasksByNameUseCase.ExecuteAsync(SearchUserTaskFilter ?? string.Empty)).ToList();
     }
 }
