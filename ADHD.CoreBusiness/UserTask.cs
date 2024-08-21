@@ -8,7 +8,7 @@ namespace ADHD.CoreBusiness
         [Required] [StringLength(150)]       public string TaskDescription { get; set; } = string.Empty;
         public string? TaskLocation { get; set; }
         public DateTime? TaskTimePrediction { get; set; }
-        public DateTime? TaskTimeInitiated { get; set; }
+        public DateTime?  TaskTimeInitiated { get; set; }
         public DateTime? TaskTimeFinished { get; set; }
         public bool TaskStatus { get; set; } = false;
         [StringLength(75)] public string TaskName { get; set; } = string.Empty;

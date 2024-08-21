@@ -2,14 +2,24 @@
 
 <h3>User Task List</h3>
 <br />
+
+<SearchComponent OnSearch="HandleSearch"></SearchComponent>
+
 <br />
 
-<UserTaskListComponent></UserTaskListComponent>
+<UserTaskListComponent SearchUserTaskFilter="@userTaskDesciptionToSearch"></UserTaskListComponent>
 
 <br />
 
 <a href="/addusertask" class="btn btn-primary">Add User Task</a>
 
 @code {
+
+    private string?  userTaskDesciptionToSearch;
+
+    private void HandleSearch(string searchFilter)
+    {
+        userTaskDesciptionToSearch = searchFilter;
+    }
 
 }
