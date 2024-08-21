@@ -49,6 +49,16 @@ namespace ADHD.Plugins.InMemory
             return Task.CompletedTask;
         }
 
+        public Task DeleteUserTaskByIdAsync(int taskId)
+        {
+            var userTask = _userTasks.FirstOrDefault(x => x.TaskId == taskId);
+            if ( userTask !=null)
+            {
+                _userTasks.Remove(userTask);
+            }
+            return Task.CompletedTask;
+        }
+
         public async Task<IEnumerable<UserTask>>GetUserTasksByDescriptionAsync(string description)
         {
             if (string.IsNullOrEmpty(description)) return await Task.FromResult(_userTasks);

@@ -1,4 +1,5 @@
-﻿
+﻿@inject IDeleteUserTaskUseCase DeleteUserTaskUseCase
+@inject NavigationManager NavigationManager
 @if (this.UserTask is not null)
 { <tr>
     <td>@UserTask.TaskDescription</td>
@@ -12,11 +13,25 @@
         <a  class="btn btn-light" href="/editusertask/@UserTask.TaskId">
             Edit</a>
     </td>
+    <td>
+        <EditForm Enchance="true" Model="UserTask"
+            FormName="@($"form-delete-inventory-{UserTask.TaskId}")"
+                      OnValidSubmit="() =>DeleteUserTask(UserTask.TaskId)">
+            <button type="submit"class="btn btn-light">Delete</button>
+        </EditForm>
+
+    </td>
 
 </tr>
 }
 @code {
     [Parameter]
     public UserTask? UserTask { get; set; }
+
+    private async Task DeleteUserTask(int userTaskId)
+    {
+        await DeleteUserTaskUseCase.ExecuteAsync(userTaskId);
+        NavigationManager.Refresh();
+    }
 
 }

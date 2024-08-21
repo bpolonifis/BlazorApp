@@ -14,6 +14,7 @@ builder.Services.AddTransient<IViewUserTasksByDescriptionUseCase, ViewUserTasksB
 builder.Services.AddTransient<IAddUserTaskUseCase, AddUserTaskUseCase>();
 builder.Services.AddTransient<IEditUserTaskUseCase, EditUserTaskUseCase>();
 builder.Services.AddTransient<IViewUserTaskbyIdUseCase, ViewUserTaskbyIdUseCase>();
+builder.Services.AddTransient<IDeleteUserTaskUseCase, DeleteUserTaskUseCase>();
 
 
 var app = builder.Build();
