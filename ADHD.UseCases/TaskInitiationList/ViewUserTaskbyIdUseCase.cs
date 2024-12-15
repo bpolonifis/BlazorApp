@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace ADHD.UseCases.ExecutiveFunction
 {
-    public class ViewUserTaskbyIdUseCase : IViewUserTaskbyIdUseCase
+    public class ViewToDobyNameUseCase : IViewUserTaskbyIdUseCase
     {
         private readonly IUserTasksRepository userTasksRepository;
 
-        public ViewUserTaskbyIdUseCase(IUserTasksRepository userTasksRepository)
+        public ViewToDobyNameUseCase(IUserTasksRepository userTasksRepository)
         {
             this.userTasksRepository = userTasksRepository;
         }

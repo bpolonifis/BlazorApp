@@ -26,9 +26,19 @@ namespace ADHD.Plugins.InMemory
                 //},
                 new UserTask
                 {
-                    TaskId = 3,TaskDescription = "TaskInitiation",TaskLocation = "Home",
-                    TaskTimePrediction = null, TaskTimeInitiated = null, TaskTimeFinished = null,
-                    TaskStatus = false,TaskName = "", TaskCount = 0, PreTaskId = 0, AfterTaskId = 0
+                    TaskId = 3,
+                    TaskDescription = "TaskInitiation",
+                    TaskLocation = "Home",
+                    TaskItem= "Laptop",
+                    TaskTimePrediction = null,
+                    TaskTimeInitiated = null,
+                    TaskTimeFinished = null,
+                    TaskStatus = false,
+                    TaskName = "",
+                    TaskType = "Work",
+                    TaskCount = 0,
+                    PreTaskId = 0,
+                    AfterTaskId = 0
                 }
             };
 

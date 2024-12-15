@@ -13,7 +13,7 @@ builder.Services.AddSingleton<IUserTasksRepository, UserTasksRepository >();
 builder.Services.AddTransient<IViewUserTasksByDescriptionUseCase, ViewUserTasksByDescriptionUseCase>();
 builder.Services.AddTransient<IAddUserTaskUseCase, AddUserTaskUseCase>();
 builder.Services.AddTransient<IEditUserTaskUseCase, EditUserTaskUseCase>();
-builder.Services.AddTransient<IViewUserTaskbyIdUseCase, ViewUserTaskbyIdUseCase>();
+builder.Services.AddTransient<IViewUserTaskbyIdUseCase, ViewToDobyNameUseCase>();
 builder.Services.AddTransient<IDeleteUserTaskUseCase, DeleteUserTaskUseCase>();
 
 

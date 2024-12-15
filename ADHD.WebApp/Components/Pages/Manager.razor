@@ -1,0 +1,49 @@
+﻿@page "/manager"
+
+
+@inject IViewUserTasksByDescriptionUseCase ViewUserTasksByNameUseCase
+@inject IEditUserTaskUseCase EditUserTaskUseCase
+
+<PageTitle>Test Page</PageTitle>
+
+<br />
+<br />
+
+<ul>
+    @if (userTasks is not null && userTasks.Count > 0)
+    {
+        foreach ( var utasks in userTasks)
+        {
+            <li>
+                @utasks.TaskDescription
+            </li>
+        }
+    }
+</ul>
+
+@code{
+    private List<UserTask>? userTasks;
+
+    protected override async Task OnInitializedAsync()
+    {
+        
+         var userTask = new UserTask
+            {
+                TaskId = 3,
+                TaskDescription = "TaskInitiation",
+                TaskLocation = "Home",
+                TaskTimePrediction = DateTime.Now,
+                TaskTimeInitiated = DateTime.Now,
+                TaskTimeFinished = DateTime.MaxValue,
+                TaskStatus = false,
+                TaskName = "",
+                TaskCount = 0,
+                PreTaskId = 0,
+                AfterTaskId = 0
+            };
+
+       await EditUserTaskUseCase.ExecuteAsync(userTask);
+
+       userTasks = (await ViewUserTasksByNameUseCase.ExecuteAsync()).ToList();
+    }
+}

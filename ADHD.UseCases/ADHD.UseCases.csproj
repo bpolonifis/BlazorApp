@@ -10,4 +10,9 @@
     <ProjectReference Include="..\ADHD.CoreBusiness\ADHD.CoreBusiness.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="EmotionList\" />
+    <Folder Include="Routine\" />
+  </ItemGroup>
+
 </Project>
